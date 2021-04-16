@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+  &:disabled {
+    cursor: auto;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.3;
+  }
+}
