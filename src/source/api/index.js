@@ -3,7 +3,7 @@ import {root} from './config';
 export const api = Object.freeze({
     todos: {
         fetch: ()=>{
-            return fetch(`${root}/todos/`, {
+            return fetch(`${root}/todo/`, {
                 method: 'GET',
                 headers: {
                     "x-user": "sirenko"
@@ -11,7 +11,7 @@ export const api = Object.freeze({
             })
         },
         post: (data)=>{
-            return fetch(`${root}/todos/`, {
+            return fetch(`${root}/todo/`, {
                 method: 'post',
                 body: JSON.stringify(data),
                 headers: {
@@ -21,7 +21,7 @@ export const api = Object.freeze({
             })
         },
         delete: (hash) => {
-            return fetch(`${root}/todos/${hash}`, {
+            return fetch(`${root}/todo/${hash}`, {
                 method: 'DELETE',
                 headers: {
                     "x-user": "sirenko"
@@ -31,7 +31,7 @@ export const api = Object.freeze({
         put: (hash, data) => {
             delete data.hash;
             delete data.created;
-            return fetch(`${root}/todos/${hash}`, {
+            return fetch(`${root}/todo/${hash}`, {
                 method: 'PUT',
                 body: JSON.stringify(data),
                 headers: {
